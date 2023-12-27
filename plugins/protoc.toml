@@ -1,0 +1,30 @@
+# A TOML plugin for proto:
+# https://moonrepo.dev/docs/proto/plugins#toml-plugin
+
+name = "protoc"
+type = "cli"
+
+[platform.linux]
+download-file = "protoc-{version}-linux-{arch}.zip"
+bin-path = "bin/protoc"
+
+[platform.macos]
+download-file = "protoc-{version}-osx-{arch}.zip"
+bin-path = "bin/protoc"
+
+# This will break for Windows x32 users. I have no idea how to map the arch, since
+# the filename for this particular case is ` protoc-{version}-win32.zip`
+[platform.windows]
+download-file = "protoc-{version}-win64.zip"
+bin-path = "bin/protoc.exe"
+
+[install]
+download-url = "https://github.com/protocolbuffers/protobuf/releases/download/v{version}/{download_file}"
+
+[install.arch]
+aarch64 = "aarch_64"
+x86 = "x86_32"
+
+[resolve]
+git-url = "https://github.com/protocolbuffers/protobuf"
+git-tag-pattern = "^v(.+)"
