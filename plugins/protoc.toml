@@ -24,8 +24,10 @@ download-url = "https://github.com/protocolbuffers/protobuf/releases/download/v{
 
 [install.arch]
 aarch64 = "aarch_64"
+arm64 = "aarch_64"
+arm = "aarch_64"
 x86 = "x86_32"
 
 [resolve]
 git-url = "https://github.com/protocolbuffers/protobuf"
-git-tag-pattern = "^v(\d+(\.\d+){0,2})$"
+git-tag-pattern = "^(?:conformance-build-tag|v)(\d+(\.\d+){0,2})?(-?rc.+|-alpha.+|-beta.+)?$"
