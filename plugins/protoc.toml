@@ -28,4 +28,4 @@ x86 = "x86_32"
 
 [resolve]
 git-url = "https://github.com/protocolbuffers/protobuf"
-git-tag-pattern = "^v(\d+(\.\d+){0,2}(-rc\d+)?)$"
+git-tag-pattern = "^v(\d+(\.\d+){0,2})$"
